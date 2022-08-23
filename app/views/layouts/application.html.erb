@@ -11,8 +11,9 @@
   </head>
 
   <body>
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
+    <!--<p class="notice"><%= notice %></p>
+        <p class="alert"><%= alert %></p>  -->
+    <%= render "layouts/alert" %>  <!--con esto me traigo el partial : _alert.html.erb-->
     <%= yield %>
   </body>
 </html>
