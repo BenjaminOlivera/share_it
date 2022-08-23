@@ -19,5 +19,10 @@ a{
 
 .body-session
 a:hover {
-  @apply text-blue-500
+  @apply text-blue-500;
+}
+
+.body-session
+.alert {
+  @apply mb-4;
 }
