@@ -26,3 +26,16 @@ a:hover {
 .alert {
   @apply mb-4;
 }
+
+.body-session
+.form-group{
+  @apply border-main border-t-8 bg-white rounded-lg shadow-lg;
+  @apply p-8 mb-6;
+}
+
+.body-session
+.form-group label{
+  @apply font-normal text-gray-600 block mb-2;
+}
+
+.body-session
