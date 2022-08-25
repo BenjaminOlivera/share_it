@@ -2,3 +2,5 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 @import "tailwindcss/session";
+@import "common";
+@import "session";
