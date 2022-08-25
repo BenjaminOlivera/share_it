@@ -47,13 +47,20 @@ a:hover {
   @apply block appearance-none w-full bg-white;
   @apply border border-gray-200;
   @apply rounded shadow;
-  @apply rounded shadow;
   @apply px-2 py-2;
 }
 
 .body-session
-.cta-btn{
+.form-group input[type= "text"] :hover,
+.body-session
+.form-group input[type= "email"] :hover,
+.body-session input[type= "password"] :hover {
+  @apply border border-gray-300;
+}
+
+.body-session.cta-btn{
   @apply select-none bg-main text-white font-bold;
   @apply rounded shadow;
   @apply py-2 px-4;
+
 }
