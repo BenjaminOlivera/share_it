@@ -1,7 +1,8 @@
 <h2>Sign up</h2>
 <% content_for(:page_title, "Sign up") %>
-<div class="form-group">
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <div class="form-group">
+
   <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="flex flex-wrap -mx-3 mb-0 md:mb-4">
