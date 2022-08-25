@@ -58,9 +58,14 @@ a:hover {
   @apply border border-gray-300;
 }
 
-.body-session.cta-btn{
+.body-session
+.cta-btn {
   @apply select-none bg-main text-white font-bold;
   @apply rounded shadow;
   @apply py-2 px-4;
+}
 
+.body-session
+.cta-btn:hover {
+  @apply bg-main-500;
 }
