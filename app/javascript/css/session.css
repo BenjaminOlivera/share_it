@@ -39,3 +39,14 @@ a:hover {
 }
 
 .body-session
+.body-group input[type="text"],
+.body-session
+.form-group input[type="email"],
+.body-session
+.form-group input[type="password"]{
+  @apply block appearance-none w-full bg-white;
+  @apply border border-gray-200;
+  @apply rounded shadow;
+  @apply rounded shadow;
+  @apply px-2 py-2;
+}
