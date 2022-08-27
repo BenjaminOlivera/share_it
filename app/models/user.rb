@@ -31,8 +31,8 @@ class User < ApplicationRecord
 
   validates_uniqueness_of :email
 
-  def loggin
-    @loggin || username || email
+  def login
+    @login || username || email
   end
 
   def self.find_authenticatable(login)
