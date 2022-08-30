@@ -1,19 +1,5 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>ShareIt</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <%= evil_icons_sprite %> <!-- esto permite que los icons se usen -->
-  </head>
-
+  <%= render "layouts/header" %>
   <body>
-    <!--<p class="notice"><%= notice %></p>
-        <p class="alert"><%= alert %></p>  -->
     <%= render "layouts/alert" %>  <!--con esto me traigo el partial : _alert.html.erb-->
     <%= yield %>
   </body>
