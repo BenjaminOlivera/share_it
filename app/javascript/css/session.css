@@ -8,13 +8,13 @@ h1.title {
 }
 
 .body-session
-container{
+.container{
 @apply mx-auto flex h-full items-center;
 }
 
 .body-session
 a{
-  @apply no-undeline font-weight-bold text-sm text-blue-400;
+  @apply no-underline font-weight-bold text-sm text-blue-400;
 }
 
 .body-session
@@ -51,10 +51,10 @@ a:hover {
 }
 
 .body-session
-.form-group input[type= "text"] :hover,
+.form-group input[type= "text"]:hover,
 .body-session
-.form-group input[type= "email"] :hover,
-.body-session input[type= "password"] :hover {
+.form-group input[type= "email"]:hover,
+.body-session input[type= "password"]:hover {
   @apply border border-gray-300;
 }
 
@@ -78,6 +78,6 @@ a:hover {
 
 .body-session
 .error-box ul {
-  apply pl-4;
+  @apply pl-4;
   list-style:disc;
 }
