@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
-  before_action :config_devise_params, if: :devise_controller?
   layout :layout_by_resource
+  before_action :config_devise_params, if: :devise_controller?
 
   private
 
@@ -18,6 +18,6 @@ class ApplicationController < ActionController::Base
     :email,
     :password,
     :password_confirmation
-      ])
+  ])
   end
 end
