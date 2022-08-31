@@ -32,6 +32,12 @@ class User < ApplicationRecord
 
   validates_uniqueness_of :email
 
+  before_save :ensure_proper_name_case
+
+  def to_param
+    username
+  end
+
   def login
     @login || username || email
   end
