@@ -27,4 +27,5 @@ module.exports = {
   },
   variants: {},
   plugins: [],
+  content: ["./src/**/*.{html,jsx}"],
 }

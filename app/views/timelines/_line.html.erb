@@ -23,3 +23,10 @@
     </div>
   </div>
 </div>
+<% if post.replies.any? %>
+  <div class="replies">
+  <% post.replies.each do |reply| %>
+    <%= render "timelines/line", post: reply %>
+    <% end %>
+  </div>
+<% end %>
