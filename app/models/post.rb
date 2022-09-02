@@ -21,4 +21,6 @@
 #
 class Post < ApplicationRecord
   belongs_to :postable, polymorphic: true
+
+  scope :not_reply, -> { where(thread_id: nil) }
 end
