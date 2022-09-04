@@ -21,6 +21,7 @@ gem 'jbuilder', '~> 2.7'
 gem 'devise', '~> 4.7'
 gem 'evil_icons', '~> 1.10'
 gem 'premailer-rails', '~> 1.11'
+gem 'active_decorator', '~> 1.3'
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
