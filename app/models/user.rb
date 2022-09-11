@@ -25,12 +25,12 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable,
-         :registerable,
-         :recoverable,
-         :rememberable,
-         :validatable,
-         authentication_keys: [:login],
-         reset_password_keys: [:login]
+    :registerable,
+    :recoverable,
+    :rememberable,
+    :validatable,
+    authentication_keys: [:login],
+    reset_password_keys: [:login]
 
   attr_writer :login
 
@@ -47,13 +47,24 @@ class User < ApplicationRecord
 
   has_many :bonds
 
-  has_many :followings,-> { Bond.following }, through: :bonds, source: :friend
+  has_many :followings,
+    -> { Bond.following },
+    through: :bonds,
+    source: :friend
 
-  has_many :follow_requests, -> { Bond.requesting }, through: :bonds, source: :friend
+  has_many :follow_requests,
+    -> { Bond.requesting },
+    through: :bonds,
+    source: :friend
 
-  has_many :inward_bonds, class_name: "Bond", foreign_key: :friend_id
+  has_many :inward_bonds,
+    class_name: "Bond",
+    foreign_key: :friend_id
 
-  has_many :followers, -> { Bond.following }, through: :inward_bonds, source: :user
+  has_many :followers,
+    -> { Bond.following },
+    through: :inward_bonds,
+    source: :user
 
   before_save :ensure_proper_name_case
 
@@ -75,12 +86,13 @@ class User < ApplicationRecord
     find_authenticatable(login)
   end
 
-  def self.send_reset_password_instrucctions(conditions)
+  def self.send_reset_password_instructions(conditions)
     recoverable = find_recoverable_or_init_with_errors(conditions)
 
     if recoverable.persisted?
-      recoverable.send_reset_password_instrucctions
+      recoverable.send_reset_password_instructions
     end
+
     recoverable
   end
 
@@ -91,31 +103,16 @@ class User < ApplicationRecord
 
     unless recoverable
       recoverable = new(login: login)
-      recoverable.erros.add(:login, login.present? ? :not_found : :blank)
+      recoverable.errors.add(:login, login.present? ? :not_found : :blank)
     end
+
     recoverable
   end
 
-
-  def name
-    if last_name
-      "#{first_name} #{last_name}"
-    else
-      first_name
-    end
-  end
-
-  def profile_picture_url
-    @profile_picture_url ||= begin
-      hash = Digest::MD5.hexdigest(email)
-      "https://www.gravatar.com/avatar/#{hash}?d=wavatar"
-    end
-  end
-
-
   private
 
-  def ensure_proper_name_case
-    self.first_name = first_name.capitalize
-  end
+    def ensure_proper_name_case
+      self.first_name = first_name.capitalize
+    end
+
 end

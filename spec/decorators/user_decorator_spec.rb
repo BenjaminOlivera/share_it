@@ -7,7 +7,7 @@ RSpec.describe UserDecorator do
   subject { user }
   describe "#name" do
     it "returns a full name" do
-      expect(user.name).to eq "#{user.first_name}" "#{user.last_name}"
+      expect(user.name).to eq "#{user.first_name} #{user.last_name}"
     end
   end
 

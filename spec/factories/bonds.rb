@@ -19,15 +19,9 @@
 #  fk_rails_...  (user_id => users.id)
 #
 FactoryBot.define do
-  factory :post do
-    user { create(:user) }
-    postable { create(:status) }
-
-    trait :with_replies do
-      replies { [
-        create(:post),
-        create(:post)
-      ] }
-    end
+  factory :bond do
+    actor_id { 1 }
+    friend_id { 1 }
+    state { "MyString" }
   end
 end
