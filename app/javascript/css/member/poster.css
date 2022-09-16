@@ -1,0 +1,16 @@
+.body-member
+.poster {
+  @apply bg-dark-700;
+}
+
+.body-member
+.poster form {
+  @apply w-full;
+}
+
+.body-member.dark
+.poster form textarea {
+  @apply bg-dark-700 w-full;
+  @apply resize-none;
+  @apply outline-none;
+}
