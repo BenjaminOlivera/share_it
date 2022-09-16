@@ -29,6 +29,6 @@ class Post < ApplicationRecord
   scope :written_by, -> (username) {
     joins(:user).where(users: {username: username})
   }
-
-
+  ## for the forms
+  attr_accessor :status_text
 end
