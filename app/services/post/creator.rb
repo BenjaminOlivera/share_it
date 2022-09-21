@@ -20,7 +20,7 @@ class Post::Creator < ApplicationService
   private
 
     def postable_type
-      @postable_type || = params.fetch(:postable_type)
+      @postable_type ||= params.fetch(:postable_type)
     end
 
     def status_text
