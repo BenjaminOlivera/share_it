@@ -1,0 +1,32 @@
+require "rails_helper"
+describe Post::Creator do
+  let(:user) { create(:user) }
+  let(:permitted_params) {{}}
+
+  subject {described_class.new(user,permitted_params)}
+  describe "#call" do
+    context "when creating a status" do
+      let(:postable_type) {"status"}
+      let(:status_text) {"Howdy!"}
+      let(:permitted_params) {{
+        postable_type: postable_type,
+        status_text: status_text,
+      }}
+
+      it "can post successfully" do
+        expect{
+          subject.call
+        }.to change {
+          users.posts.reload.count
+        }.from(0).to(1)
+        post =user.posts.first
+        expect(post.postable).to be_a Status
+        expect(post.postable.text).to eq "Howdy!"
+      end
+
+      context "when the user is not known" do
+        let(:user) {nil}
+        it "cannot be posted" do
+          expect(subject.call).to be_falsey
+        end
+      end
