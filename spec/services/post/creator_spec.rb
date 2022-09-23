@@ -30,3 +30,18 @@ describe Post::Creator do
           expect(subject.call).to be_falsey
         end
       end
+      context "when the status text is empty" do
+        let(:status_text) {""}
+        it "cannot be posted" do
+          expect(subject.call).to be_falsey
+        end
+      end
+      context "when the postable type is empty" do
+        let(:postable_type) {""}
+        it "cannot be posted"  do
+          expect(subject.call).to be_falsey
+        end
+      end
+    end
+  end
+end
